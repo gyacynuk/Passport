@@ -1,0 +1,131 @@
+.desktop-navbar {
+    width: 100%;
+    font-family: 'Raleway', sans-serif;
+    background-color: #F3F3F3;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, .10);
+    position: relative;
+    overflow: hidden;
+}
+
+.collapsed-content-wrapper {
+    width: 100%;
+    height: 80px;
+    padding: 0 48px;
+    position: relative;
+}
+
+/* Logo Section */
+.logo-wrapper {
+    height: 100%;
+    float: left;
+}
+
+/* Naviagtion Buttons Section */
+.button-wrapper {
+    height: 100%;
+    float: right;
+    display: flex;
+}
+
+.page-button {
+    padding: 0 16px;
+    height: 100%;
+    color: #5A5A5A;
+    position: relative;
+
+    /* Transition */
+    -webkit-transition: 200ms ease;
+    -moz-transition: 200ms ease;
+    -o-transition: 200ms ease;
+    transition: 200ms ease;
+}
+.page-button:hover {
+    color: #74D183;
+    text-decoration: none;
+}
+.page-button:visited .page-button:hover {
+    color: #74D183;
+}
+.page-button.selected {
+    color: #74D183;
+}
+.selected-page-underline {
+    height: 4px;
+    position: absolute;
+    bottom: 0;
+    left: 16px;
+    right: 16px;
+    background-color: #74D183;
+}
+.search-icon {
+    color: #5A5A5A;
+    font-size: 24px;
+}
+.above-search-overlay {
+    z-index: 2;
+}
+
+/* Search Overlay */
+.search-overlay-wrapper {
+    width: 100%;
+    height: 80px;
+    padding: 0 104px 0 48px;
+    background-color: #74D183;
+    z-index: 1;
+    position: absolute;
+}
+.search-overlay-bar {
+    width: 100%;
+    color: #5A5A5A;
+    background-color: transparent;
+    font-size: 24px;
+    border: none;
+}
+.search-overlay-bar:focus {
+    outline: none;
+}
+
+/* Mobile */
+.expanded-menu-wrapper {
+    padding: 0 48px 8px 48px;
+    overflow: hidden;
+}
+.mobile-page-button {
+    color: #5A5A5A;
+}
+.mobile-page-button:hover {
+    text-decoration: none;
+}
+.mobile-page-button.selected {
+    color: #74D183;
+}
+.menu-icon {
+    font-size: 32px;
+}
+.mobile-search-bar-wrapper {
+    padding-bottom: 8px;
+    position: relative;
+}
+.mobile-search-bar {
+    width: 100%;
+    padding-left: 8px;
+    padding-right: 40px;
+    background-color: #E5E5E5;
+    border: 1px solid #C4C4C4;
+    border-radius: 5px; 
+
+    /* Transition */
+    -webkit-transition: 200ms ease;
+    -moz-transition: 200ms ease;
+    -o-transition: 200ms ease;
+    transition: 200ms ease;
+}
+.mobile-search-bar:focus {
+    outline: none;
+    border: 1px solid #74D183;
+}
+.mobile-search-bar-icon {
+    position: absolute;
+    padding: 2px 0;
+    right: 8px;
+}

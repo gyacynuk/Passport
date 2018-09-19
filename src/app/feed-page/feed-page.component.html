@@ -1,0 +1,114 @@
+<!-- Featured Events -->
+<!-- Title Row -->
+<div class="row my-4">
+    <div class="col-12 text-center">
+        <h1 class="row-title">Featured Events</h1>
+    </div>
+</div>
+<!-- Content Row -->
+<div class="row my-3 mb-5 mx-5">
+    <div class="col-12">
+        <div class="d-flex d-lg-inline-block justify-content-center w-100">
+            <div class="d-flex justify-content-between flex-column flex-lg-row align-items-center">
+                <div *ngFor="let event of featuredEvents" class="featured-event-wrapper mb-4 mb-lg-0">
+                    <img class="featured-event-image" [src]="event.asset">
+                    <div class="featured-event-overlay v-center">
+                        <div class="mx-auto">
+                            <i class="featured-event-overlay-icon material-icons">info</i>
+                            <div class="featured-event-overlay-header">
+                                {{event.name}}
+                            </div>
+                            <div class="featured-event-overlay-subheader">
+                                {{event.organization}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Upcoming Events -->
+<div class="row my-3">
+    <div class="col-12 text-center">
+        <h1 class="row-title">Upcoming Events for You</h1>
+    </div>
+</div>
+<!-- Event Cards -->
+<div *ngFor="let event of upcomingEvents" class="row my-3 mx-5">
+    <div class="col-12">
+        <div class="card-wrapper">
+            <!-- Card Header -->
+            <div class="row mb-3">
+                <!-- Organization Image Placeholder -->
+                <div class="col-2">
+                    <div class="mx-auto" style="width:64px; height: 64px; background-color: #C4C4C4; border-radius: 50%;"></div>
+                </div>
+
+                <!-- Event Name and Organization Name -->
+                <div class="col-10 v-center">
+                    <div class="pl-2">
+                        <div class="card-title">
+                            {{event.name}}
+                        </div>
+                        <div class="card-sub-title">
+                            {{event.organization}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card Main Content -->
+            <div class="row">
+                <!-- Date -->
+                <div class="col-2 text-center">
+                    <div class="card-date-small-text">{{DAYS[event.date.getDay()]}}</div>
+                    <div class="card-date-large-text">{{event.date.getDate()}}</div>
+                    <div class="card-date-small-text">{{MONTHS[event.date.getMonth()]}}</div>
+                </div>
+
+                <!-- Description and Tags -->
+                <div class="col-10">
+                    <!-- Description -->
+                    <div class="row mb-3">
+                        <div class="col-12">
+                            <div class="card-description pl-2 pr-5">
+                                This is a breif description about the event. It must grab the user’s attention, and give them a breif overview detailing key information about the event. A longer description will be availible on the event page. 2 - 4 line descriptions are best, as anything less seems lacking, and exceeding this threshold will damage the design, by making it feel squishy. This is just filler text btw I am just trying to hit 4 lines ya feel?
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Tags -->
+                    <div class="row mb-3">
+                        <div class="col-12">
+                            <div class="card-tags-container d-flex flex-wrap flex-row justify-content-between pl-2 pr-5">
+                                <div *ngFor="let tag of event.tags" class="card-tag" [ngClass]="{ 'important': tag.important}">
+                                    {{tag.name}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card Buttons and Price -->
+            <div class="row">
+                <!-- Price -->
+                <div class="col-2">
+                    <div class="card-price mx-auto">{{event.price <= 0 ? 'Free' : '$' + event.price}}</div>
+                </div>
+                <!-- Buttons -->
+                <div class="col-10">
+                    <div class="pl-2"> 
+                        <button type="button" class="btn pastel w-122" (click)="toggleRegistered(event)"
+                        [ngClass]="{ 'btn-outline-success': !event.registered, 'btn-success': event.registered }">
+                            {{event.registered ? 'Registered' : 'Register'}}
+                        </button>
+                        <button type="button" class="btn btn-outline-primary pastel ml-3 w-122">Learn More</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,54 @@
+<nav class="desktop-navbar">
+    <!-- Search Overlay -->
+    <div *ngIf="searchOverlayVisible" class="search-overlay-wrapper v-center d-none d-md-flex" @overlaySlide>
+        <input id="search-bar" class="search-overlay-bar" type="text" [(ngModel)]="searchText" placeholder="Search..." (keydown.enter)="searchSubmit()">
+    </div>
+    <!-- Collapsed Navbar Content -->
+    <div class="collapsed-content-wrapper">
+        <!-- Logo Wrapper -->
+        <div class="logo-wrapper v-center">
+            <!-- Logo Placeholder -->
+            <div style="width: 40px; height: 40px; border-radius: 50%; background-color: #74D183; margin-right: 24px;"></div>
+            LOGO
+        </div>
+
+        <!-- Naviagtion Buttons Wrapper -->
+        <div class="button-wrapper d-none d-md-flex">
+            <!-- Page Link Buttons -->
+            <a *ngFor="let button of pageButtons; let i = index;" [ngClass]="{ selected: selectedPageIndex === i }" 
+            class="page-button v-center" routerLink="{{button.link}}" (click)="navigateTo(i)">
+                {{button.name}}
+                <div class="selected-page-underline" *ngIf="selectedPageIndex === i" @riseUp></div>
+            </a>
+
+            <!-- Search Icon -->
+            <a class="page-button above-search-overlay v-center" href="javascript:void(0)" (click)="toggleSearchOverlay()">
+                <i class="material-icons search-icon">{{searchOverlayVisible ? 'close' : 'search'}}</i>
+            </a>
+        </div>
+
+        <!-- Naviagtion Buttons Wrapper (Mobile) -->
+        <div class="button-wrapper d-md-none">
+            <a class="page-button v-center" href="javascript:void(0)" (click)="toggleMenuState()">
+                <i class="material-icons menu-icon">{{menuExpanded ? 'close' : 'menu'}}</i>
+            </a>
+        </div>
+    </div>
+
+    <!-- Naviagtion Bar Expansion (Mobile) -->
+    <div class="expanded-menu-wrapper d-md-none" *ngIf="menuExpanded" @expandable>
+        <!-- Search Bar -->
+        <div class="mobile-search-bar-wrapper">
+            <input class="mobile-search-bar" type="text" [(ngModel)]="searchText" placeholder="Search..." (keydown.enter)="searchSubmit()">
+            <i class="material-icons mobile-search-bar-icon search-icon" (click)="searchSubmit()">search</i>
+        </div>
+        
+        <!-- Mobile Page Buttons -->
+        <div class="mobile-page-button-wrapper" *ngFor="let button of pageButtons; let i = index;">
+            <a class="mobile-page-button" routerLink="{{button.link}}" [ngClass]="{ selected: selectedPageIndex === i }" 
+            href="javascript:void(0)" (click)="navigateTo(i)">
+                {{button.name}}
+            </a>
+        </div>
+    </div>
+</nav>

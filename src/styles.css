@@ -1,1 +1,114 @@
-/* You can add global styles to this file, and also import other style files */
+/* HTML Global Styling */
+/***********************/
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    height: 100%;
+}
+
+/* Shared Mini Styles */
+/**********************/
+.inline-block {
+    display: inline-block;
+}
+
+.v-center {
+    display:flex;
+    align-items:center;
+}
+
+.w-122 {
+    width: 122px;
+}
+
+/* Bootstrap Overrides */
+/***********************/
+/* Solid Green */
+.btn.btn-success.pastel {
+    background-color: #74D183;
+    border-color: #74D183;
+    border-radius: 10px; 
+    font-family: 'Raleway', 'Sans Serif';
+    font-size: 14px;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+.btn.btn-success.pastel:focus, .btn.btn-success.pastel:active:focus {
+    box-shadow: 0 0 0 3px #90df9d;
+}
+.btn.btn-outline-success.pastel:hover {
+    background-color: #74D183;
+}
+.btn.btn-success.pastel:active {
+    background-color: #63bd72;
+    border-color: #63bd72;
+}
+
+/* Outline Green */
+.btn.btn-outline-success.pastel {
+    border-color: #74D183;
+    color: #74D183;
+    border-radius: 10px; 
+    font-family: 'Raleway', 'Sans Serif';
+    font-size: 14px;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+.btn.btn-outline-success.pastel:active {
+    border-color: #74D183;
+} 
+.btn.btn-outline-success.pastel:focus, .btn.btn-outline-success.pastel:active:focus {
+    box-shadow: 0 0 0 3px #90df9d;
+}
+.btn.btn-outline-success.pastel:hover {
+    background-color: #74D183;
+    color: #FBFBFB;
+}
+
+/* Solid Blue */
+.btn.btn-primary.pastel {
+    background-color: #5288C6;
+    border-color: #5288C6;
+    border-radius: 10px; 
+    font-family: 'Raleway', 'Sans Serif';
+    font-size: 14px;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+.btn.btn-outline-primary.pastel:hover {
+    background-color: #5288C6;
+}
+.btn.btn-primary.pastel:active {
+    background-color: #4679b4;
+    border-color: #4679b4;
+}
+
+/* Outline Blue */
+.btn.btn-outline-primary.pastel {
+    border-color: #5288C6;
+    color: #5288C6;
+    border-radius: 10px; 
+    font-family: 'Raleway', 'Sans Serif';
+    font-size: 14px;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+.btn.btn-outline-primary.pastel:active {
+    border-color: #5288C6;
+}
+.btn.btn-outline-primary.pastel:hover {
+    background-color: #5288C6;
+    color: #FBFBFB;
+}
+
+/* Shared Full Styles */
+/**********************/
+.row-title {
+    font-size: 32px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    color: #5A5A5A;
+}

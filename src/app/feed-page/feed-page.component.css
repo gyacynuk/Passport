@@ -1,0 +1,124 @@
+/* Featured Events */
+.featured-event-wrapper {
+    width: 300px;
+    max-height: 300px;
+    background-color: #E5E5E5;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+.featured-event-image {
+    width: 300px;
+    height: auto;
+    max-height: 300px;
+}
+.featured-event-overlay {
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.85);
+    position: absolute;
+    top:0; right: 0; bottom: 0; left: 0;
+    cursor: pointer;
+    
+    /* Transition */
+    -webkit-transition: 400ms ease;
+    -moz-transition: 400ms ease;
+    -o-transition: 400ms ease;
+    transition: 400ms ease;
+}
+.featured-event-overlay:hover {
+    opacity: 1;
+}
+
+.featured-event-overlay-header {
+    color: white;
+    font-size: 24px;
+    font-family: 'Raleway', sans-serif;
+    width: 100%;
+    margin-top: 8px;
+    text-align: center;
+}
+.featured-event-overlay-subheader {
+    color: #C4C4C4;
+    font-size: 16px;
+    font-family: 'Raleway', sans-serif;
+    width: 100%;
+    text-align: center;
+}
+.featured-event-overlay-icon {
+    width: 100%;
+    color: #C4C4C4;
+    text-align: center;
+    font-size: 32px;
+
+    /* Transition */
+    -webkit-transition: 400ms ease;
+    -moz-transition: 400ms ease;
+    -o-transition: 400ms ease;
+    transition: 400ms ease;
+}
+.featured-event-overlay-icon:hover {
+    transform: scale(1.5)
+}
+
+/* Event Cards */
+/***************/
+.card-wrapper {
+    width: 100%;
+    padding: 32px 64px;
+    background-color: #FBFBFB;
+    border-radius: 10px; 
+}
+.card-title {
+    font-family: 'Roboto', 'Sans Serif';
+    font-size: 28px;
+    line-height: 28px;
+    color: #000;
+    margin: 0;
+}
+.card-sub-title {
+    font-family: 'Roboto', 'Sans Serif';
+    font-size: 16px;
+    color: #C4C4C4;
+}
+
+/* Date */
+.card-date-large-text {
+    font-size: 64px;
+    line-height: 64px;
+    font-weight: 200;
+    font-family: 'Raleway', 'Sans Serif';
+}
+.card-date-small-text {
+    font-size: 14px;
+    font-family: 'Raleway', 'Sans Serif';
+}
+
+/* Tags */
+.card-tags-container {
+    /* Force tags to be only one line */
+    height: 30px;
+    overflow: hidden;
+}
+.card-tag {
+    padding: 8px 16px;
+    font-size: 14px;
+    line-height: 14px;
+    color: #FBFBFB;
+    background-color: #5288C6;
+    border-radius: 23px;
+    white-space: nowrap;
+}
+.card-tag.important {
+    background-color: #EB7A73;
+}
+
+/* Price */
+.card-price {
+    width: fit-content;
+    font-family: 'Raleway', 'Sans Serif';
+    font-size: 14px;
+    color: #5A5A5A;
+    padding: 6px 16px;
+    border: 1px solid #5A5A5A;
+    border-radius: 10px;
+}
