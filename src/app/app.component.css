@@ -9,8 +9,9 @@
 
 .main-content {
     flex: 1 1 auto;
-    overflow: auto; /* IE Compatibility */
+    overflow: scroll; /* IE Compatibility */
     overflow: overlay;
+    
 }
 .main-content::-webkit-scrollbar {
     width: 5px;
