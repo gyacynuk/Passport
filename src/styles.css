@@ -112,3 +112,32 @@ body {
     font-weight: bold;
     color: #5A5A5A;
 }
+
+.card-wrapper {
+    width: 100%;
+    background-color: #FBFBFB;
+    border-radius: 10px; 
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, .12);
+}
+
+/* Price */
+.card-price {
+    width: fit-content;
+    font-family: 'Raleway', 'Sans Serif';
+    font-size: 14px;
+    color: #5A5A5A;
+    padding: 6px 16px;
+    border: 1px solid #5A5A5A;
+    border-radius: 10px;
+}
+
+.divider {
+    width: 100%;
+    border-bottom: 1px solid #C4C4C4;
+}
+
+.primary-link {
+    width: fit-content;
+    color: #5288C6;
+    cursor: pointer;
+}

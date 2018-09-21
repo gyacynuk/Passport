@@ -2,15 +2,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
+import { NavigationBarComponent } from './components/navigation-bar/navigation-bar.component';
 import { AppRoutingModule } from './/app-routing.module';
-import { FeedPageComponent } from './feed-page/feed-page.component';
-import { OrganizationsPageComponent } from './organizations-page/organizations-page.component';
-import { PeoplePageComponent } from './people-page/people-page.component';
-import { ProfilePageComponent } from './profile-page/profile-page.component';
-import { SearchResultsPageComponent } from './search-results-page/search-results-page.component';
+import { FeedPageComponent } from './components/feed-page/feed-page.component';
+import { OrganizationsPageComponent } from './components/organizations-page/organizations-page.component';
+import { PeoplePageComponent } from './components/people-page/people-page.component';
+import { ProfilePageComponent } from './components/profile-page/profile-page.component';
+import { SearchResultsPageComponent } from './components/search-results-page/search-results-page.component';
+import { EventDetailPageComponent } from './components/event-detail-page/event-detail-page.component';
 
 @NgModule({
   declarations: [
@@ -20,13 +22,15 @@ import { SearchResultsPageComponent } from './search-results-page/search-results
     OrganizationsPageComponent,
     PeoplePageComponent,
     ProfilePageComponent,
-    SearchResultsPageComponent
+    SearchResultsPageComponent,
+    EventDetailPageComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

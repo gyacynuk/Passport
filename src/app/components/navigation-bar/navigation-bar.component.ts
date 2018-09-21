@@ -4,7 +4,6 @@ import { Title } from '@angular/platform-browser';
 import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 
 import { filter, map, mergeMap } from 'rxjs/operators';
-import { GlobalService } from '../global-service.service';
 
 @Component({
     selector: 'app-navigation-bar',

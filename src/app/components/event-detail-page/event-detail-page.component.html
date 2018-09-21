@@ -1,0 +1,166 @@
+<!-- Back Button Row -->
+<div class="row my-4 mx-md-5">
+    <div class="col-12">
+        <div class="back-button-wrapper v-center" (click)="goBack()">
+            <i class="material-icons">arrow_back</i>
+            <div>Back</div>
+        </div>
+    </div>
+</div>
+
+<!-- Event Detail Card -->
+<div class="row my-3 mx-md-5">
+    <div class="col-12">
+        <div class="card-wrapper p-4 p-md-5">
+
+            <!-- Card Header -->
+            <div class="row">
+                <!-- Title Section -->
+                <div class="col-lg-4 d-flex flex-column justify-content-between">
+                    <div> <!-- This is for flexbox grouping -->
+                        <!-- Large Title -->
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="large-title">
+                                    This is the Event Title
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Sub Title -->
+                        <div class="row mb-5">
+                            <div class="col-12">
+                                <div class="sub-title">
+                                    Hosted by The Organization
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Header Buttons -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="d-flex flex-row justify-content-between">
+                                <div class="card-price v-center">
+                                    Free
+                                </div>
+                                <button type="button" class="btn btn-outline-success pastel w-122" (click)="toggleRegistered()">
+                                    Register
+                                </button>
+                                <button type="button" class="btn btn-outline-primary pastel v-center">
+                                    <i class="material-icons">bookmark_border</i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Description -->
+                <div class="col-lg-7 offset-lg-1">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget viverra odio. Proin vestibulum ante nec pretium sagittis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla facilisi. Aenean commodo metus at nisi interdum vulputate. Nunc posuere, felis eu fringilla pretium, lectus mi consectetur mi, eu efficitur enim dolor a mauris. Phasellus venenatis nibh quis nunc luctus gravida. Maecenas consequat tristique iaculis. Nunc id bibendum arcu. Donec vehicula libero in nulla euismod semper. Quisque ultrices odio neque, quis fringilla nulla pulvinar et. Nam eget sem id nunc dignissim accumsan. Fusce cursus imperdiet quam a aliquet. Maecenas eu elit lobortis quam viverra viverra. In justo quam, suscipit vitae nisl et, pulvinar congue quam.
+                    <br>
+                    Vivamus bibendum mi quis massa consectetur, et tempus magna dictum. Nulla facilisi. Aenean ac tincidunt ipsum. Phasellus metus lectus, pretium luctus purus et, luctus cursus urna. Vestibulum aliquam, nisi vitae cursus bibendum, sapien metus dapibus ligula, a sagittis tellus leo eu magna. Sed urna felis, tincidunt eu tellus laoreet, finibus imperdiet nisl. Mauris ut tortor in justo convallis facilisis ac accumsan nisl. Donec sagittis ornare velit et fermentum. Mauris vel vestibulum massa. Integer fermentum nisi vitae dolor placerat, non laoreet neque volutpat. Sed rutrum, nibh ut dapibus fringilla, sem magna pharetra lorem, ut tincidunt arcu nibh vel nisi. Morbi ornare lacus ut sodales tempus.
+                    <br>
+                    Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque id ante elit. Etiam dui diam, lacinia sed est eget, scelerisque eleifend elit. Aliquam tincidunt non turpis vel tempor. Pellentesque ultricies eleifend quam id eleifend. Quisque finibus elementum eleifend. Cras a mauris viverra, euismod mauris ut, posuere dui. Fusce sodales felis neque, nec iaculis nisl pharetra in.
+                </div>
+            </div>
+
+            <!-- Divider -->
+            <div class="row my-5">
+                <div class="col-12">
+                    <div class="divider"></div>
+                </div>
+            </div>
+
+            <!-- Card When and Where -->
+            <div class="row">
+                <!-- When and Where -->
+                <div class="col-lg-4">
+                    <!-- When - Section Title -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="section-title">
+                                When
+                            </div>
+                        </div>
+                    </div>
+                    <!-- When - Details -->
+                    <div class="row mb-5">
+                        <div class="col-12">
+                            <div>
+                                Thursday September 20th, 2018
+                            </div> 
+                            <div>
+                                6:00 PM - 9:00 PM
+                            </div> 
+                        </div>
+                    </div>
+
+                    <!-- Where - Section Title -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="section-title">
+                                Where
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Where - Details -->
+                    <div class="row">
+                        <div class="col-12 mb-2">
+                            <div>
+                                UofT Financial Aid Office,
+     
+                            </div> 
+                            <div>
+                                172 St George Street, 
+
+                            </div> 
+                            <div>
+                                Toronto, ON
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="primary-link" (click)="openInMaps('172 St George Street, Toronto, ON')">
+                                View In Maps
+                                <i class="material-icons primary-link new-window-icon">open_in_new_window</i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+          
+
+                    
+
+                <!-- Images -->
+                <div class="col-lg-7 offset-lg-1">
+                    <div class="v-center">
+                        <img class="mx-auto"src="assets/images/feature-1.png" height="auto" width="auto" style="max-height: 350px; max-width: 100%;;">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Divider -->
+            <div class="row my-5">
+                <div class="col-12">
+                    <div class="divider"></div>
+                </div>
+            </div>
+
+             <!-- Card Who -->
+             <div class="row">
+                <!-- Section Title -->
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="section-title">
+                                Who
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Panel Information -->
+                <div class="col-12">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

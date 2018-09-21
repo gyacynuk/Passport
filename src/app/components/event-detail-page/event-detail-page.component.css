@@ -1,0 +1,25 @@
+.back-button-wrapper {
+    width: fit-content;
+    color: #5A5A5A;
+    cursor: pointer;
+}
+
+/* Card Header */
+.large-title {
+    font-size: 72px;
+    font-weight: 600;
+}
+.sub-title {
+    font-size: 24px;
+    color: #C4C4C4;
+}
+
+/* Card Sections */
+.section-title {
+    font-size: 48px;
+}
+.new-window-icon {
+    width: 14px;
+    font-size: 14px;
+    vertical-align: top;
+}
