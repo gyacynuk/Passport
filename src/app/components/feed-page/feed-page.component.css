@@ -94,15 +94,3 @@
     height: 30px;
     overflow: hidden;
 }
-.card-tag {
-    padding: 8px 16px;
-    font-size: 14px;
-    line-height: 14px;
-    color: #FBFBFB;
-    background-color: #5288C6;
-    border-radius: 23px;
-    white-space: nowrap;
-}
-.card-tag.important {
-    background-color: #EB7A73;
-}

@@ -1,4 +1,4 @@
-export interface Group {
+export interface PassportGroup {
     id: number,
     name: string,
     organizer: string,

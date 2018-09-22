@@ -1,3 +1,62 @@
-<p>
-  people-page works!
-</p>
+<!-- Loading GIF -->
+<div class="row my-3 mx-md-5" *ngIf="!users">
+    <div class="col-12">
+        <div class="mx-auto" style="width: fit-content;">
+            <img class="mx-auto" width="128px" height="auto" src="assets/images/fluid-loader.gif">
+        </div>
+    </div>
+</div>
+
+<div class="row my-3 mx-md-5">
+    <div class="col-12 col-md-6 col-lg-4 my-3" *ngFor="let profile of users">
+        <div class="card-wrapper relative py-5 h-100">
+            <div class="d-flex flex-column justify-content-between h-100">
+                <div> <!-- Flexbox Grouping -->
+                    <!-- Profile Thumbnail -->
+                    <div class="row mb-3">
+                        <div class="col-12">
+                            <div class="thumb-circle-cropper mx-auto">
+                                <img [src]="profile.imageURL" width="196px" height="auto">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Profile Header -->
+                    <div class="row px-5 mb-3">
+                        <div class="col-12 text-center">
+                            <div class="profile-title">
+                                {{profile.firstName}} {{profile.lastName}}
+                            </div>
+                            
+                            <div class="profile-sub-title">
+                                Studies at {{profile.school?.name || 'University of Toronto'}}
+                            </div>
+                            <!-- Admin Badge -->
+                            <div class="card-tag gold v-center w-fit-content p-1 mx-auto" *ngIf="profile.isAdmin">
+                                <i class="material-icons small">stars</i>
+                                &nbsp;
+                                <div>
+                                    Admin
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Profile Bio -->
+                    <div class="row px-5 mb-3">
+                        <div class="col-12 text-justify">
+                            {{profile.background}}  
+                        </div>
+                    </div>
+                </div>
+
+                <!-- View Full Profile Link, Fixed to Bottom of Card -->
+                <div class="primary-link text-center w-100" (click)="viewProfile(profile)">
+                    View Full Profile
+                </div>
+               
+            </div>
+
+        </div>
+    </div>
+</div>

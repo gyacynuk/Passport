@@ -1,4 +1,4 @@
-export interface Tag {
+export interface PassportTag {
     id: number;
     name: string;
 }

@@ -10,7 +10,7 @@
     <div class="col-12">
         <div class="d-flex d-lg-inline-block justify-content-center w-100">
             <div class="d-flex justify-content-between flex-column flex-lg-row align-items-center">
-                <div *ngFor="let event of featuredEvents" class="featured-event-wrapper mb-4 mb-lg-0" routerLink="/events/1">
+                <div *ngFor="let event of featuredEvents" class="featured-event-wrapper mb-4 mb-lg-0" routerLink="/events/6">
                     <img class="featured-event-image" [src]="event.asset">
                     <div class="featured-event-overlay v-center">
                         <div class="mx-auto">
@@ -35,6 +35,16 @@
         <h1 class="row-title">Upcoming Events for You</h1>
     </div>
 </div>
+
+<!-- Loading GIF -->
+<div class="row my-3 mx-md-5" *ngIf="!upcomingEvents">
+    <div class="col-12">
+        <div class="mx-auto" style="width: fit-content;">
+            <img class="mx-auto" width="128px" height="auto" src="assets/images/fluid-loader.gif">
+        </div>
+    </div>
+</div>
+
 <!-- Event Cards -->
 <div *ngFor="let event of upcomingEvents" class="row my-3 mx-md-5">
     <div class="col-12">
@@ -42,14 +52,14 @@
             <!-- Card Header -->
             <div class="row mb-3">
                 <!-- Organization Image Placeholder -->
-                <div class="col-2">
+                <div class="col-3 col-md-2 p-0">
                     <div class="mx-auto" style="width:64px; height: 64px; position: relative; overflow: hidden; border-radius: 50%;">
-                        <img [src]="event.imageLink" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); height: 64px; width: auto;">
+                        <img [src]="event.thumbnailLink" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); height: 64px; width: auto;">
                     </div>
                 </div>
 
                 <!-- Event Name and Organization Name -->
-                <div class="col-10 v-center">
+                <div class="col-9 col-md-10 v-center">
                     <div class="pl-2">
                         <div class="card-title">
                             {{event.name}}
@@ -64,14 +74,14 @@
             <!-- Card Main Content -->
             <div class="row">
                 <!-- Date -->
-                <div class="col-2 text-center mb-3">
-                    <div class="card-date-small-text">{{DAYS[event.startTime.getDay()]}}</div>
-                    <div class="card-date-large-text">{{event.startTime.getDate()}}</div>
-                    <div class="card-date-small-text">{{MONTHS[event.startTime.getMonth()]}}</div>
+                <div class="col-3 col-md-2 text-center mb-3">
+                    <div class="card-date-small-text">{{event.startTime | date:'EEEE'}}</div>
+                    <div class="card-date-large-text">{{event.startTime | date:'dd'}}</div>
+                    <div class="card-date-small-text">{{event.startTime | date:'MMMM'}}</div>
                 </div>
 
                 <!-- Description and Tags -->
-                <div class="col-10">
+                <div class="col-9 col-md-10">
                     <!-- Description -->
                     <div class="row mb-3">
                         <div class="col-12">
@@ -81,10 +91,10 @@
                         </div>
                     </div>
                     <!-- Tags -->
-                    <div class="row mb-3">
+                    <div class="row mb-sm-3">
                         <div class="col-12">
-                            <div class="card-tags-container d-flex flex-wrap flex-row justify-content-start pl-2 pr-5">
-                                <div *ngFor="let tag of event.tags" class="card-tag mr-2" [ngClass]="{ 'important': tag.important}">
+                            <div class="d-flex flex-wrap flex-row justify-content-start pl-2">
+                                <div *ngFor="let tag of event.tags" class="card-tag mr-2 my-1" [ngClass]="{ 'important': tag.important}">
                                     {{tag.name}}
                                 </div>
                             </div>
@@ -93,25 +103,52 @@
                 </div>
             </div>
 
-            <!-- Card Buttons and Price -->
-            <div class="row">
+            <!-- Card Buttons and Price - DESKTOP -->
+            <div class="row d-none d-sm-flex">
                 <!-- Price -->
-                <div class="col-2">
+                <div class="col-3 col-md-2">
                     <div class="card-price mx-auto">
                         <!-- {{event.price <= 0 ? 'Free' : '$' + event.price}} -->
                         Free
                     </div>
                 </div>
                 <!-- Buttons -->
-                <div class="col-10">
+                <div class="col-9 col-md-10">
                     <div class="pl-2"> 
                         <button type="button" class="btn pastel w-122" (click)="toggleRegistered(event)"
-                        [ngClass]="{ 'btn-outline-success': !event.registered, 'btn-success': event.registered }">
-                            {{event.registered ? 'Registered' : 'Register'}}
+                        [ngClass]="{ 'btn-outline-success': !event.currentUserRegistered, 'btn-success': event.currentUserRegistered }">
+                            {{event.currentUserRegistered ? 'Registered' : 'Register'}}
                         </button>
-                        <button type="button" class="btn btn-outline-primary pastel ml-3 w-122">Learn More</button>
+                        <button type="button" class="btn btn-outline-primary pastel ml-3 w-122" (click)="learnMore(event)">
+                            Learn More
+                        </button>
                     </div>
                 </div>
+            </div>
+
+            <!-- Divider - MOBILE-->
+            <div class="row my-3 d-flex d-sm-none">
+                <div class="col-12">
+                    <div class="divider"></div>
+                </div>
+            </div>
+            <!-- Card Buttons and Price - MOBILE -->
+            <div class="row d-flex d-sm-none">
+                <div class="col-12">
+                    <div class="d-flex flex-row justify-content-between">
+                        <div class="card-price">
+                            <!-- {{event.price <= 0 ? 'Free' : '$' + event.price}} -->
+                            Free
+                        </div>
+                        <button type="button" class="btn pastel w-122" (click)="toggleRegistered(event)"
+                        [ngClass]="{ 'btn-outline-success': !event.currentUserRegistered, 'btn-success': event.currentUserRegistered }">
+                            {{event.currentUserRegistered ? 'Registered' : 'Register'}}
+                        </button>
+                        <button type="button" class="btn btn-outline-primary pastel w-122" (click)="learnMore(event)">
+                            Learn More
+                        </button>
+                    </div>
+                </div> 
             </div>
 
         </div>

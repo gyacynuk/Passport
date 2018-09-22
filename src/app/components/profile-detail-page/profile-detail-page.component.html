@@ -1,0 +1,137 @@
+<!-- Loading GIF -->
+<div class="row my-3 mx-md-5" *ngIf="!profile">
+    <div class="col-12">
+        <div class="mx-auto" style="width: fit-content;">
+            <img class="mx-auto" width="128px" height="auto" src="assets/images/fluid-loader.gif">
+        </div>
+    </div>
+</div>
+
+<div class="row my-3 mx-md-5" *ngIf="profile">
+    <div class="col-12">
+        <div class="card-wrapper p-4 p-md-5">
+            <!-- Card Header -->
+            <div class="row">
+                <!-- Title Section -->
+                <div class="col-lg-4 d-flex flex-column justify-content-between mb-5 mb-lg-0">
+                    <div class="text-center"> <!-- This is for flexbox grouping -->
+                        <!-- Profile Image -->
+                        <div class="row">
+                            <div class="col-12 pr-5 pl-5 pb-5">
+                                <div class="thumb-circle-cropper mx-auto">
+                                    <img [src]="profile.imageURL" width="100%" height="auto">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Large Title -->
+                        <div class="row mb-1">
+                            <div class="col-12">
+                                <div class="profile-title">
+                                    {{profile.firstName}} {{profile.lastName}}
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Sub Title -->
+                        <div class="row mb-5">
+                            <div class="col-12">
+                                <div class="d-flex w-100 flex-row justify-content-center">
+                                    <div class="profile-sub-title">
+                                        {{profile.school.name}}
+                                    </div>
+                                    <!-- Admin Badge -->
+                                    <div class="card-tag gold v-center w-fit-content p-1 ml-3" *ngIf="profile.isAdmin">
+                                        <i class="material-icons small">stars</i>
+                                        &nbsp;
+                                        <div>
+                                            Admin
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Header Buttons -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="d-flex flex-row justify-content-between">
+                                <!-- <div class="card-price v-center">
+                                    Free
+                                </div>
+                                
+                                <button type="button" class="btn btn-outline-primary pastel v-center">
+                                    <i class="material-icons">bookmark_border</i>
+                                </button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Description -->
+                <div class="col-lg-7 offset-lg-1">
+                    <div class="row">
+                        <div class="col-12 section-title">
+                            About
+                        </div>
+                        <div class="col-12">
+                            {{profile.background}}
+                        </div>
+                    </div>
+
+                    <!-- Divider -->
+                    <div class="row my-3">
+                        <div class="col-12">
+                            <div class="divider"></div>
+                        </div>
+                    </div>
+
+                    <!-- TU20 Level -->
+                    <div class="row">
+                        <div class="col-12 section-title">
+                            TU20 Level
+                        </div>
+                        <div class="col-12">
+                            This Feature is Coming Soon
+                        </div>
+                    </div>
+
+                    <!-- Divider -->
+                    <div class="row my-3">
+                        <div class="col-12">
+                            <div class="divider"></div>
+                        </div>
+                    </div>
+
+                     <!-- Achievements -->
+                     <div class="row">
+                        <div class="col-12 section-title">
+                            Achievements
+                        </div>
+                        <div class="col-12">
+                            This Feature is Coming Soon
+                        </div>
+                    </div>
+
+                    <!-- Divider -->
+                    <div class="row my-3">
+                        <div class="col-12">
+                            <div class="divider"></div>
+                        </div>
+                    </div>
+
+                    <!-- Organizations -->
+                    <div class="row">
+                        <div class="col-12 section-title">
+                            Organizations
+                        </div>
+                        <div class="col-12">
+                            This Feature is Coming Soon
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>

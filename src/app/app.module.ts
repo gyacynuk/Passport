@@ -13,6 +13,7 @@ import { PeoplePageComponent } from './components/people-page/people-page.compon
 import { ProfilePageComponent } from './components/profile-page/profile-page.component';
 import { SearchResultsPageComponent } from './components/search-results-page/search-results-page.component';
 import { EventDetailPageComponent } from './components/event-detail-page/event-detail-page.component';
+import { ProfileDetailPageComponent } from './components/profile-detail-page/profile-detail-page.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { EventDetailPageComponent } from './components/event-detail-page/event-d
     PeoplePageComponent,
     ProfilePageComponent,
     SearchResultsPageComponent,
-    EventDetailPageComponent
+    EventDetailPageComponent,
+    ProfileDetailPageComponent
   ],
   imports: [
     BrowserModule,

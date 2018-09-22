@@ -24,6 +24,14 @@ body {
     width: 122px;
 }
 
+.small {
+    font-size: 14px;
+}
+
+.w-fit-content {
+    width: fit-content
+}
+
 /* Bootstrap Overrides */
 /***********************/
 /* Solid Green */
@@ -131,13 +139,44 @@ body {
     border-radius: 10px;
 }
 
+/* Divider */
 .divider {
     width: 100%;
     border-bottom: 1px solid #C4C4C4;
 }
 
+/* Primary Link Text */
 .primary-link {
     width: fit-content;
     color: #5288C6;
     cursor: pointer;
+}
+
+/* Tag Pills */
+.card-tag {
+    padding: 8px 16px;
+    font-size: 14px;
+    line-height: 14px;
+    color: #FBFBFB;
+    background-color: #5288C6;
+    border-radius: 23px;
+    white-space: nowrap;
+}
+.card-tag.important {
+    background-color: #EB7A73;
+}
+.card-tag.mundane {
+    background-color: #E5E5E5;
+    color: #000000;
+}
+.card-tag.gold {
+    background-color: rgb(243, 201, 63);
+    color: #FBFBFB;
+}
+
+/* Circle Cropper */
+.thumb-circle-cropper {
+    width: fit-content;
+    border-radius: 50%;
+    overflow: hidden;
 }

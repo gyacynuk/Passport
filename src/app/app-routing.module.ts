@@ -6,6 +6,7 @@ import { ProfilePageComponent } from './components/profile-page/profile-page.com
 import { PeoplePageComponent } from './components/people-page/people-page.component';
 import { SearchResultsPageComponent } from './components/search-results-page/search-results-page.component';
 import { EventDetailPageComponent } from './components/event-detail-page/event-detail-page.component';
+import { ProfileDetailPageComponent } from './components/profile-detail-page/profile-detail-page.component';
 
 const routes: Routes = [
     { path: '', redirectTo: '/feed', pathMatch: 'full' },  // default path
@@ -14,6 +15,7 @@ const routes: Routes = [
     { path: 'organizations', component: OrganizationsPageComponent, data: { title: 'Organizations' }  },
     { path: 'people', component: PeoplePageComponent, data: { title: 'People' }  },
     { path: 'profile', component: ProfilePageComponent, data: { title: 'Profile' }  },
+    { path: 'users/:id', component: ProfileDetailPageComponent, data: { title: 'User' }  },
     { path: 'search', component: SearchResultsPageComponent, data: { title: 'Search Results' }  },
 ];
 

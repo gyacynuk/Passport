@@ -1,5 +1,6 @@
-import { Tag } from "./tag";
-import { Group } from "./group";
+import { PassportTag } from "./tag";
+import { PassportGroup } from "./group";
+import { PassportUser } from "./user";
 
 export class PassportEvent {
 
@@ -13,11 +14,13 @@ export class PassportEvent {
         public longDescription: string,
         public imageLink: string,
         public isPrivate: boolean,
-        public group: Group,
+        public group: PassportGroup,
         public possibleSpots: number,
         public tagLinks: null,
-        public tags: Tag[],
-        public remainingSpots: number
+        public tags: PassportTag[],
+        public remainingSpots: number,
+        public currentUserRegistered: boolean,
+        public thumbnailLink: string
     ) {}
 
     static create(event: ServerEvent) {
@@ -26,7 +29,7 @@ export class PassportEvent {
             event.name,
             event.location,
             new Date(event.startTime),
-            new Date(event.startTime),
+            new Date(event.endTime),
             event.shortDescription,
             event.longDescription,
             event.imageLink,
@@ -35,7 +38,9 @@ export class PassportEvent {
             event.possibleSpots,
             event.tagLinks,
             event.tags,
-            event.remainingSpots
+            event.remainingSpots,
+            event.currentUserRegistered,
+            event.thumbnailLink
         )
     }
 }
@@ -48,11 +53,19 @@ export interface ServerEvent {
     endTime: string;
     shortDescription: string;
     longDescription: string;
+    thumbnailLink: string;
     imageLink: string;
     isPrivate: boolean;
-    group: Group;
+    group: PassportGroup;
     possibleSpots: number;
     tagLinks: null;
-    tags: Tag[];
+    tags: PassportTag[];
     remainingSpots: number;
+    currentUserRegistered: boolean;
+}
+
+export interface PassportEventRelationship {
+    registeredUsers: PassportUser[];
+    attendedUsers: PassportUser[];
+    organizers: PassportUser[];
 }
